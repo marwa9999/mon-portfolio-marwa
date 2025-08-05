@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import marwaPhoto from "./assets/marwa.jpg";
 
 function App() {
   return (
@@ -7,11 +8,18 @@ function App() {
       <div className="min-h-screen bg-gray-100 font-sans">
         <header className="bg-white shadow fixed w-full z-10 top-0">
           <div className="max-w-7xl mx-auto py-4 px-6 flex justify-between items-center">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Marwa Ben Mansour</h1>
-              <p className="text-sm text-gray-600">
-                Administratrice Systèmes DevOps – CI/CD et Cloud
-              </p>
+            <div className="flex items-center space-x-4">
+              <img
+                src={marwaPhoto}
+                alt="Marwa Ben Mansour"
+                className="w-12 h-12 rounded-full border border-gray-300 shadow-sm"
+              />
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">Marwa Ben Mansour</h1>
+                <p className="text-sm text-gray-600">
+                  Administratrice Systèmes DevOps – CI/CD et Cloud
+                </p>
+              </div>
             </div>
             <nav className="space-x-4">
               <Link to="/" className="text-gray-700 hover:text-blue-600">Accueil</Link>
@@ -63,9 +71,14 @@ function Home() {
 
 function About() {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold mb-4">À propos</h2>
-      <p className="text-gray-700">
+    <section className="flex flex-col items-center text-center">
+      <img
+        src={marwaPhoto}
+        alt="Marwa Ben Mansour"
+        className="w-40 h-40 rounded-full border-4 border-blue-200 mb-4"
+      />
+      <h2 className="text-2xl font-semibold mb-2">À propos</h2>
+      <p className="max-w-xl text-gray-700">
         Diplômée RNCP en DevOps, certifiée ISTQB, et passionnée par l’automatisation et la fiabilité des systèmes, je conçois des pipelines CI/CD, déploie dans le cloud et mets en place des outils de supervision.
       </p>
     </section>
